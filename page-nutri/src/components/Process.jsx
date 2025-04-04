@@ -27,7 +27,7 @@ export default function Process() {
   ];
 
   return (
-    <section className="process-section">
+    <section id="process"  className="process-section">
       <div className="process-container">
         <div className="section-header">
           <h2>Como Funciona</h2>

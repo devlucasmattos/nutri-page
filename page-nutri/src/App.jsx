@@ -4,6 +4,8 @@ import About from './components/About';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import Process from './components/Process';
+import Plans from './components/Plans';
+import FAQ from './components/FAQ';
 import CtaBanner from './components/CtaBanner';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -20,7 +22,9 @@ function App() {
           <Services />
           <Testimonials />
           <Process />
+          <Plans />
           <CtaBanner />
+          <FAQ />
           <Contact />
         </div>
       </main>

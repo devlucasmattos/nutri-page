@@ -1,4 +1,3 @@
-// Services.jsx
 import React from 'react';
 import './Services.css';
 
@@ -8,27 +7,33 @@ export default function Services() {
       icon: "🏥",
       title: "Consulta Presencial",
       description: "Avaliação completa com análise de exames e elaboração de plano alimentar individualizado.",
-      price: "R$ 250,00"
+      whatsappMessage: "Olá Dra. Ana, gostaria de saber mais sobre a Consulta Presencial!"
     },
     {
       icon: "💻",
       title: "Consulta Online",
       description: "Atendimento via videoconferência com a mesma qualidade da consulta presencial.",
-      price: "R$ 200,00"
+      whatsappMessage: "Olá Dra. Ana, tenho interesse na Consulta Online, pode me informar mais detalhes?"
     },
     {
       icon: "🍎",
       title: "Plano Alimentar",
       description: "Elaboração de cardápios personalizados considerando suas preferências e rotina.",
-      price: "R$ 180,00"
+      whatsappMessage: "Dra. Ana, gostaria de conhecer melhor seu serviço de Plano Alimentar Personalizado"
     },
     {
       icon: "📊",
       title: "Acompanhamento Mensal",
       description: "Monitoramento contínuo com ajustes periódicos do plano nutricional.",
-      price: "R$ 150,00/mês"
+      whatsappMessage: "Oi Dra. Ana, quero informações sobre o Acompanhamento Mensal de nutrição"
     }
   ];
+
+  const handleWhatsAppClick = (message) => {
+    const phoneNumber = '5553991244320';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <section id="services" className="services-section">
@@ -44,8 +49,12 @@ export default function Services() {
               <div className="service-icon">{service.icon}</div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <div className="service-price">{service.price}</div>
-              <button className="text-button">Saiba mais →</button>
+              <button 
+                className="text-button"
+                onClick={() => handleWhatsAppClick(service.whatsappMessage)}
+              >
+                Saiba mais →
+              </button>
             </div>
           ))}
         </div>
